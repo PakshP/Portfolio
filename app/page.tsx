@@ -9,11 +9,11 @@ export default function Home() {
   return (
       <div className="min-h-screen bg-background text-foreground">
         {/* Navigation */}
-        <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className="flex justify-center sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-16 items-center justify-between">
             <a href="#" className="flex items-center ml-20 space-x-2">
               <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-home-3KtbzA1mrd4nEpW7ON4UvynATWDSfU.png"
+                  src="https://pakshp.github.io/Portfolio/logo-home.png"
                   alt="Portfolio Home"
                   className="h-10 w-10"
               />
