@@ -5,18 +5,17 @@ import { ThemeProvider } from "./components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
+                                       children,
+                                   }: {
+    children: React.ReactNode
 }) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+    return (
+        <html lang="en" suppressHydrationWarning>
+        <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
-          {children}
+            {children}
         </ThemeProvider>
-      </body>
-    </html>
-  )
+        </body>
+        </html>
+    )
 }
-
