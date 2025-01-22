@@ -17,7 +17,7 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   output: 'export',
-  assetPrefix: '/',
+  assetPrefix: '/Portfolio/',
 }
 
 mergeConfig(nextConfig, userConfig)
