@@ -13,7 +13,7 @@ export default function Home() {
           <div className="container flex h-16 items-center justify-between">
             <a href="#" className="flex items-center ml-20 space-x-2">
               <img
-                  src="https://pakshp.github.io/Portfolio/logo-home.png"
+                  src="https://pakshp.github.io/Portfolio/public/logo-home.png"
                   alt="Portfolio Home"
                   className="h-10 w-10"
               />
