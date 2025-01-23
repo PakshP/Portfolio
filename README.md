@@ -8,6 +8,8 @@ A clean, interactive, and fully responsive personal portfolio website built with
 - **Interactive Animations**: Scroll-triggered effects and hover transitions for an engaging user experience.
 - **Project Showcase**: Filterable gallery for projects with descriptions and live links.
 - **Contact Form**: Simple form with social media links to connect with you.
+- **Deployment**: Deployed on Vercel for easy access and sharing.
 
-# VISIT HERE:
-https://pakshp.github.io/Portfolio/
+# [VISIT HERE](https://personal-website-vert-one-12.vercel.app/)
+```
+
