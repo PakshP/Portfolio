@@ -16,9 +16,7 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-  output: 'export',
-  assetPrefix: '/Portfolio/',
-}
+};
 
 mergeConfig(nextConfig, userConfig)
 

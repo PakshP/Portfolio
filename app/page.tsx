@@ -123,7 +123,7 @@ export default function Home() {
           </section>
 
           {/* Technical Skills Section */}
-          <section id="skills" className="py-12 md:py-16">
+          <section id="skills" className="py-12 md:py-16 mx-5">
             <h2 className="text-2xl font-bold mb-6 text-center">Other Technical Skills</h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="space-y-4">
@@ -225,7 +225,7 @@ export default function Home() {
           </section>
         </main>
 
-        <footer className="border-t py-6 md:py-8">
+        <footer className="border-t flex justify-center py-6 md:py-8">
           <div className="container text-center text-sm text-muted-foreground">
             <p>&copy; {new Date().getFullYear()} Paksh Patel. All rights reserved.</p>
           </div>
