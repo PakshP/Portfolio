@@ -11,5 +11,3 @@ A clean, interactive, and fully responsive personal portfolio website built with
 - **Deployment**: Deployed on Vercel for easy access and sharing.
 
 # [VISIT HERE](https://personal-website-vert-one-12.vercel.app/)
-```
-
