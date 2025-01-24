@@ -10,4 +10,4 @@ A clean, interactive, and fully responsive personal portfolio website built with
 - **Contact Form**: Simple form with social media links to connect with you.
 - **Deployment**: Deployed on Vercel for easy access and sharing.
 
-# [VISIT HERE](https://personal-website-vert-one-12.vercel.app/)
+# [VISIT HERE](https://www.pakshpatel.me/)
