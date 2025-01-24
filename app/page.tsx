@@ -4,6 +4,7 @@ import { Code, Database, Globe, Wrench, Mail, Github, Linkedin } from "lucide-re
 import { MobileNav } from "./components/mobile-nav"
 import { ProjectCard } from "./components/project-card"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {Bungee} from "next/dist/compiled/@next/font/dist/google";
 
 export default function Home() {
   return (
@@ -41,22 +42,49 @@ export default function Home() {
 
         <main id="hero" className="container mx-auto px-4 py-8">
           {/* Hero Section */}
-          <section className="min-h-screen flex flex-col justify-center items-center relative">
-            <div className="text-center">
-              <h1 className="text-9xl mb-4 font-bold tracking-tighter animate-fade-up">Paksh Patel</h1>
-              <p className="text-xl mx-auto animate-fade-up">
-                A motivated Computer Science student with a passion for building creative applications using modern
-                technologies.
-              </p>
-              <p className="text-xl mb-6 mx-auto animate-fade-up">
-                Dedicated to delivering impactful, user-focused solutions in software and web development.
-              </p>
-              <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 animate-fade-up"
-              >
-                Contact Me
-              </a>
+          <section className="relative flex flex-col md:flex-row">
+            {/* Left Side (Image) */}
+            <div className="relative w-full md:w-1/2 min-h-[50vh] md:min-h-fit overflow-hidden md:block hidden">
+              <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('https://pakshp.github.io/Portfolio/public/IMG_6399.JPG')`
+                  }}
+              ></div>
+            </div>
+
+            {/* Right Side (Text) */}
+            <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 text-center">
+              <div className="max-w-xl mx-auto my-60">
+                <div className="md:hidden mb-4">
+                  <img
+                      src="https://pakshp.github.io/Portfolio/public/IMG_6399.JPG"
+                      alt="Paksh Patel"
+                      className="rounded-full w-40 h-40 mx-auto"
+                  />
+                </div>
+                <h1 className="text-6xl md:text-9xl mb-4 font-bold tracking-tighter animate-fade-up">
+                  Paksh Patel
+                </h1>
+                <p className="text-md md:text-xl mb-2 animate-fade-up">
+                  A motivated Computer Science student with a passion for building
+                  creative applications using modern technologies.
+                </p>
+                <p className="text-md md:text-xl mb-6 animate-fade-up">
+                  Dedicated to delivering impactful, user-focused solutions in
+                  software and web development.
+                </p>
+                <a
+                    href="#contact"
+                    className="inline-flex items-center justify-center rounded-md text-sm font-medium 
+             ring-offset-background transition-colors focus-visible:outline-none 
+             focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 
+             disabled:pointer-events-none disabled:opacity-50 bg-primary 
+             text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 animate-fade-up"
+                >
+                  Contact Me
+                </a>
+              </div>
             </div>
           </section>
 
@@ -68,8 +96,10 @@ export default function Home() {
                 I'm a <b>Computer Science student</b> at the University of South Carolina with a strong passion for
                 creating impactful software adesigning applications thbring ideas to life. expertise lies in{" "}
                 <b>full-stack development</b>, with hands-on experience building dynamic{" "}
-                <b>wapplications, efficiedatabase systems, and intuitive user interfaces</b>. I have a particular interest{" "}
-                <b>game development</b> alove exploring how softwasolutions can enhance gaming experiencor complement the
+                <b>wapplications, efficiedatabase systems, and intuitive user interfaces</b>. I have a particular
+                interest{" "}
+                <b>game development</b> alove exploring how softwasolutions can enhance gaming experiencor complement
+                the
                 gamiindustry.
               </p>
               <p>
@@ -115,10 +145,10 @@ export default function Home() {
           <section className="mx-5">
             <h2 className="text-2xl font-bold mb-6">Programming Languages</h2>
             <div className="grid gap-6 mx-auto">
-              <ProgressBar label="Java" progress={90} />
-              <ProgressBar label="Python" progress={85} />
-              <ProgressBar label="C++" progress={75} />
-              <ProgressBar label="JavaScript" progress={80} />
+              <ProgressBar label="Java" progress={90}/>
+              <ProgressBar label="Python" progress={85}/>
+              <ProgressBar label="C++" progress={75}/>
+              <ProgressBar label="JavaScript" progress={80}/>
             </div>
           </section>
 
@@ -128,7 +158,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <Globe className="h-5 w-5" />
+                  <Globe className="h-5 w-5"/>
                   <h3 className="text-xl font-semibold">Web Technologies</h3>
                 </div>
                 <ul className="grid grid-cols-2 gap-2 text-sm">
@@ -142,7 +172,7 @@ export default function Home() {
               </div>
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <Database className="h-5 w-5" />
+                  <Database className="h-5 w-5"/>
                   <h3 className="text-xl font-semibold">Databases</h3>
                 </div>
                 <ul className="grid grid-cols-2 gap-2 text-sm">
@@ -152,7 +182,7 @@ export default function Home() {
               </div>
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <Wrench className="h-5 w-5" />
+                  <Wrench className="h-5 w-5"/>
                   <h3 className="text-xl font-semibold">Tools & Platforms</h3>
                 </div>
                 <ul className="grid grid-cols-2 gap-2 text-sm">
@@ -165,7 +195,7 @@ export default function Home() {
               </div>
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <Code className="h-5 w-5" />
+                  <Code className="h-5 w-5"/>
                   <h3 className="text-xl font-semibold">Other Skills</h3>
                 </div>
                 <ul className="grid grid-cols-2 gap-2 text-sm">
@@ -189,14 +219,14 @@ export default function Home() {
                       href="mailto:paksh@email.sc.edu"
                       className="flex items-center justify-center gap-2 text-lg hover:text-primary transition-colors"
                   >
-                    <Mail className="h-5 w-5" />
+                    <Mail className="h-5 w-5"/>
                     paksh@email.sc.edu
                   </a>
                   <a
                       href="mailto:pakshpatel1@gmail.com"
                       className="flex items-center justify-center gap-2 text-lg hover:text-primary transition-colors"
                   >
-                    <Mail className="h-5 w-5" />
+                    <Mail className="h-5 w-5"/>
                     pakshpatel1@gmail.com
                   </a>
                 </div>
@@ -207,7 +237,7 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                   >
-                    <Github className="h-6 w-6" />
+                    <Github className="h-6 w-6"/>
                     <span className="sr-only">GitHub</span>
                   </a>
                   <a
@@ -216,7 +246,7 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                   >
-                    <Linkedin className="h-6 w-6" />
+                    <Linkedin className="h-6 w-6"/>
                     <span className="sr-only">LinkedIn</span>
                   </a>
                 </div>
