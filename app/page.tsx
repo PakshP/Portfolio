@@ -95,20 +95,20 @@ export default function Home() {
               <p>
                 I'm a <b>Computer Science student</b> at the University of South Carolina with a strong passion for
                 creating impactful software and designing applications that bring ideas to life. My expertise lies in
-                <b>full-stack development</b>, with hands-on experience building dynamic <b>web applications, efficient
+                <b> full-stack development</b>, with hands-on experience building dynamic <b>web applications, efficient
                 database systems, and intuitive user interfaces</b>. I have a particular interest in <b>game development</b> and
                 enjoy exploring how software solutions can enhance gaming experiences or complement the gaming industry.
               </p>
               <p>
                 When I'm not coding, I enjoy exploring the intersection of technology and creativity, diving into
-                <b>game development, computer systems, and graphic design</b>. Whether it's designing
-                <b>intuitive interfaces, optimizing game mechanics, or building interactive applications</b>, I'm always looking
+                <b> game development, computer systems, and graphic design</b>. Whether it's designing
+                <b> intuitive interfaces, optimizing game mechanics, or building interactive applications</b>, I'm always looking
                 for ways to blend functionality with aesthetics to engage users and elevate their experience.
               </p>
               <p>
                 I'm eager to take on <b>internship</b> and <b>job opportunities</b> where I can apply my skills,
                 collaborate on innovative projects, and grow as a developer. If you're looking for someone who's
-                <b>passionate, versatile, and driven</b> to deliver exceptional results, let's connect!
+                <b> passionate, versatile, and driven</b> to deliver exceptional results, let's connect!
               </p>
 
             </div>
