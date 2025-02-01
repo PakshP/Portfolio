@@ -11,11 +11,23 @@ export default function ContactForm() {
     const [cooldown, setCooldown] = useState(0);
 
     useEffect(() => {
+        const savedEndTime = localStorage.getItem("cooldownEndTime");
+        if (savedEndTime) {
+            const endTime = parseInt(savedEndTime, 10);
+            const now = Date.now();
+            if (endTime > now) {
+                setCooldown(Math.ceil((endTime - now) / 1000));
+            }
+        }
+    }, []);
+
+    useEffect(() => {
         let timer: NodeJS.Timeout | null = null;
         if (cooldown > 0) {
             timer = setInterval(() => {
                 setCooldown((prev) => {
                     if (prev <= 1) {
+                        localStorage.removeItem("cooldownEndTime");
                         if (timer) clearInterval(timer);
                         return 0;
                     }
@@ -36,6 +48,8 @@ export default function ContactForm() {
             await emailjs.sendForm("service_767hy4j","template_k6zfmut",formRef.current!,"q4cGSIOxTW1Kic_wD");
             setMessage("Message sent successfully!");
             formRef.current?.reset();
+            const endTime = Date.now() + 30000;
+            localStorage.setItem("cooldownEndTime", endTime.toString());
             setCooldown(30);
         } catch (error) {
             console.error("Failed to send email:", error);
