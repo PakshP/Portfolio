@@ -5,18 +5,19 @@ import { MobileNav } from "./components/mobile-nav"
 import { ProjectCard } from "./components/project-card"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {Bungee} from "next/dist/compiled/@next/font/dist/google";
+import ContactForm from "@/app/components/contact-form";
 
 export default function Home() {
   return (
       <div className="min-h-screen bg-background text-foreground">
         {/* Navigation */}
-        <header className="flex justify-center sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className="flex justify-center sticky top-0 z-40 w-full drop-shadow-lg bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-16 items-center justify-between">
             <a href="#" className="flex items-center ml-20 space-x-2">
               <img
                   src="https://pakshp.github.io/Portfolio/public/logo-home.png"
                   alt="Portfolio Home"
-                  className="h-10 w-10"
+                  className="h-10 w-10 drop-shadow-lg"
               />
             </a>
             <nav className="hidden md:flex items-center gap-6">
@@ -33,7 +34,7 @@ export default function Home() {
                 Contact
               </a>
             </nav>
-            <div className="flex items-center mr-20 gap-4">
+            <div className="flex items-center mr-20 gap-4 drop-shadow-lg">
               <MobileNav />
               <ThemeToggle />
             </div>
@@ -46,7 +47,7 @@ export default function Home() {
             {/* Left Side (Image) */}
             <div className="relative w-full md:w-1/2 min-h-[50vh] md:min-h-fit overflow-hidden md:block hidden">
               <div
-                  className="absolute inset-0 bg-cover bg-center"
+                  className="absolute inset-0 bg-cover bg-center rounded-3xl"
                   style={{
                     backgroundImage: `url('https://pakshp.github.io/Portfolio/public/IMG_6399.JPG')`
                   }}
@@ -80,7 +81,7 @@ export default function Home() {
              ring-offset-background transition-colors focus-visible:outline-none 
              focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 
              disabled:pointer-events-none disabled:opacity-50 bg-primary 
-             text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 animate-fade-up"
+             text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 animate-fade-up drop-shadow-lg"
                 >
                   Contact Me
                 </a>
@@ -119,7 +120,7 @@ export default function Home() {
           {/* Projects Section */}
           <section id="projects" className="py-12 mx-5">
             <h2 className="text-3xl font-bold mb-6 text-center">Projects</h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 drop-shadow-lg">
               <ProjectCard
                   title="DegreeAudit"
                   description="A desktop application created by me and a team of 4 others for our Software Engineering class. The application is used to help students track their progress towards their degree."
@@ -209,7 +210,7 @@ export default function Home() {
 
           {/* Contact Section */}
           <section id="contact" className="py-12 md:py-16">
-            <Card className="max-w-md mx-auto">
+            <Card className="max-w-md mx-auto drop-shadow-lg">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-center">Contact Me</CardTitle>
               </CardHeader>
@@ -250,12 +251,15 @@ export default function Home() {
                     <span className="sr-only">LinkedIn</span>
                   </a>
                 </div>
+                <div id="contact-form" className="space-y-4">
+                  <ContactForm />
+                </div>
               </CardContent>
             </Card>
           </section>
         </main>
 
-        <footer className="border-t flex justify-center py-6 md:py-8">
+        <footer className="flex justify-center py-6 md:py-8">
           <div className="container text-center text-sm text-muted-foreground">
             <p>&copy; {new Date().getFullYear()} Paksh Patel. All rights reserved.</p>
           </div>
