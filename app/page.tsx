@@ -34,7 +34,7 @@ export default function Home() {
                 Contact
               </a>
             </nav>
-            <div className="flex items-center mr-20 gap-4 drop-shadow-lg">
+            <div className="flex items-center mr-20 gap-4">
               <MobileNav />
               <ThemeToggle />
             </div>
@@ -47,7 +47,7 @@ export default function Home() {
             {/* Left Side (Image) */}
             <div className="relative w-full md:w-1/2 min-h-[50vh] md:min-h-fit overflow-hidden md:block hidden">
               <div
-                  className="absolute inset-0 bg-cover bg-center rounded-3xl"
+                  className=" absolute inset-0 bg-cover bg-center rounded-3xl"
                   style={{
                     backgroundImage: `url('https://pakshp.github.io/Portfolio/public/IMG_6399.JPG')`
                   }}
