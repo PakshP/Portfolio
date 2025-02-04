@@ -3,7 +3,7 @@ import { ProgressBar } from "./components/progress-bar"
 import { Code, Database, Globe, Wrench, Mail, Github, Linkedin } from "lucide-react"
 import { MobileNav } from "./components/mobile-nav"
 import { ProjectCard } from "./components/project-card"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card"
 import {Bungee} from "next/dist/compiled/@next/font/dist/google";
 import ContactForm from "@/app/components/contact-form";
 
