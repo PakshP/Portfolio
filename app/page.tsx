@@ -49,7 +49,7 @@ export default function Home() {
               <div
                   className=" absolute inset-0 bg-cover bg-center rounded-3xl"
                   style={{
-                    backgroundImage: `url('https://pakshp.github.io/Portfolio/public/IMG_6399.JPG')`
+                    backgroundImage: `url('https://pakshp.github.io/Portfolio/public/IMG_6399.jpg')`
                   }}
               ></div>
             </div>
@@ -59,7 +59,7 @@ export default function Home() {
               <div className="max-w-xl mx-auto my-20 md:my-60">
                 <div className="md:hidden mb-4">
                   <img
-                      src="https://pakshp.github.io/Portfolio/public/IMG_6399.JPG"
+                      src="https://pakshp.github.io/Portfolio/public/IMG_6399.jpg"
                       alt="Paksh Patel"
                       className="rounded-full w-40 h-40 mx-auto"
                   />
