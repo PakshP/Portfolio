@@ -1,66 +1,58 @@
-import Image from "next/image";
-import NavBar from "@/app/components/NavBar";
+import NavBar from "@/components/NavBar";
+import { Button } from "@/components/ui/button";
+import { LuDownload, LuContact } from "react-icons/lu";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background font-sans">
+    <div className="min-h-screen bg-background font-sans text-foreground">
       <NavBar />
-      <main className="flex min-h-screen w-full flex-col items-center justify-center max-w-10/12 bg-white/80 py-32 px-16 sm:items-start">
-        <Image
-          className="opacity-90"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-sm text-3xl font-semibold leading-10 tracking-tight text-foreground">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-xl text-lg leading-8 text-muted">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-foreground underline decoration-accent/50 underline-offset-4"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-foreground underline decoration-accent/50 underline-offset-4"
-            >
-              Learning
-            </a>{" "}
-            center.
+      <main className="mx-auto w-full max-w-3/4 px-4 sm:px-6 lg:px-10">
+        <section id="about" className="py-10 sm:py-14">
+          <h2 className="text-xl font-semibold sm:text-6xl">Paksh Patel</h2>
+          <div className="relative mx-auto flex items-center">
+            <p className="mt-2 max-w-prose text-lg text-muted-foreground sm:text-lg">
+              I am a <b>software developer</b> passionate about building impactful applications and continuously learning new technologies. I am well versed in <b>full-stack development</b> and enjoy working on projects that challenge me to grow my skills.
+            </p>
+
+            <div className="flex w-full items-center justify-center gap-3">
+              <Button className="px-7 py-6 text-lg" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                Download Resume
+                <LuDownload />
+              </Button>
+              <Button variant="outline" className="bg-white px-7 py-6 text-lg">
+                Contact Me
+                <LuContact />
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="projects" className="border-t border-border py-10 sm:py-14">
+          <h2 className="text-xl font-semibold sm:text-2xl">Projects</h2>
+          <p className="mt-2 max-w-prose text-sm text-muted-foreground sm:text-base">
+            Placeholder content.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#2a251e] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="opacity-90"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-foreground/15 px-5 transition-colors hover:border-accent/40 hover:bg-accent/10 md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
+
+        <section
+          id="experience" className="border-t border-border py-10 sm:py-14">
+          <h2 className="text-xl font-semibold sm:text-2xl">Experience</h2>
+          <p className="mt-2 max-w-prose text-sm text-muted-foreground sm:text-base">
+            Placeholder content.
+          </p>
+        </section>
+
+        <section id="contact" className="border-t border-border py-10 sm:py-14">
+          <h2 className="text-xl font-semibold sm:text-2xl">Contact</h2>
+          <p className="mt-2 max-w-prose text-sm text-muted-foreground sm:text-base">
+            Placeholder content.
+          </p>
+        </section>
+
+        <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
+          Footer placeholder
+        </footer>
       </main>
     </div>
   );
