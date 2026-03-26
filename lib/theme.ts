@@ -1,64 +1,64 @@
 // Color palette constants
 export const colors = {
   // Primary colors
-  primary: "#2A3B55",
-  primaryLight: "#5D6C82",
-  primaryLighter: "#6D7B90",
-  primaryLightest: "#4E5F7A",
+  primary: "#0F172A",
+  primaryLight: "#334155",
+  primaryLighter: "#475569",
+  primaryLightest: "#64748B",
 
   // Accent colors
-  accent: "#D4AF37",
-  accentDark: "#c89f2b",
+  accent: "#22C55E",
+  accentDark: "#16A34A",
 
   // Secondary brand color
-  secondary: "#BF3A2B",
+  secondary: "#38BDF8",
 
   // Neutrals
   white: "#FFFFFF",
   background: "#F8FAFC",
-  backgroundAlt: "#F9FAFC",
-  lightGray: "#EEF2F7",
-  lightGrayBlue: "#F7F2E4",
-  lightBorder: "#E8EDF5",
-  gradient1: "#EFF3F8",
+  backgroundAlt: "#F1F5F9",
+  lightGray: "#E2E8F0",
+  lightGrayBlue: "#E0F2FE",
+  lightBorder: "#CBD5E1",
+  gradient1: "#F0F9FF",
 
   // Borders
-  border: "#D7DCE5",
+  border: "#D6E0EA",
 
   // Text colors
-  textMuted: "#5A6A82",
+  textMuted: "#64748B",
 };
 
 // Reusable class names for common patterns
 export const classNames = {
   // Section styling
-  sectionBorder: "border-[#D7DCE5]",
+  sectionBorder: "border-slate-200",
   sectionPy: "py-16 sm:py-20",
-  sectionLabel: "text-xs uppercase tracking-[0.22em] text-[#BF3A2B]",
-  sectionTitle: "mt-3 font-serif text-3xl text-[#2A3B55] sm:text-5xl",
-  sectionDescription: "mt-3 max-w-2xl text-sm leading-7 text-[#4E5F7A] sm:text-base",
+  sectionLabel: "inline-flex items-center rounded-md border border-cyan-500/25 bg-cyan-500/10 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-700",
+  sectionTitle: "mt-4 font-heading text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl",
+  sectionDescription: "mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg",
 
   // Timeline styling
-  timelineLabel: "text-xs uppercase tracking-[0.15em] text-[#6D7B90]",
-  timelineTitle: "mt-2 text-xl font-semibold text-[#2A3B55]",
-  timelineDescription: "text-sm text-[#4E5F7A]",
-  timelineAxis: "absolute left-2 top-0 h-full w-px bg-[#D7DCE5] sm:left-3",
-  timelineNode: "absolute -left-5 top-1 h-2.5 w-2.5 rounded-full bg-[#D4AF37] sm:-left-6",
+  timelineLabel: "font-mono text-xs uppercase tracking-[0.14em] text-cyan-700",
+  timelineTitle: "mt-2 text-xl font-semibold text-slate-900",
+  timelineDescription: "text-base text-slate-600",
+  timelineAxis: "absolute left-2 top-0 h-full w-px bg-slate-300 sm:left-3",
+  timelineNode: "absolute -left-5 top-1 h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_0_3px_rgba(34,197,94,0.2)] sm:-left-6",
 
   // Button styling
   buttonPrimary:
-    "h-12 rounded-full bg-[#D4AF37] px-8 text-sm font-semibold text-white hover:bg-[#c89f2b]",
+    "h-12 rounded-md border border-emerald-500/45 bg-emerald-500 px-7 font-mono text-base font-semibold text-white hover:bg-emerald-600",
   buttonOutline:
-    "h-12 rounded-full border-[#2A3B55] bg-transparent px-8 text-sm text-[#2A3B55] hover:border-[#BF3A2B] hover:bg-[#F7F2E4]",
+    "h-12 rounded-md border border-slate-300 bg-white/70 px-7 font-mono text-base text-slate-700 hover:border-cyan-500 hover:text-cyan-700",
   buttonSmall:
-    "mt-4 inline-flex items-center rounded-full border border-[#2A3B55] px-4 py-2 text-sm font-medium text-[#2A3B55] transition-colors hover:border-[#BF3A2B] hover:text-[#BF3A2B]",
+    "mt-4 inline-flex items-center rounded-md border border-slate-300 px-4 py-2.5 font-mono text-sm uppercase tracking-wide text-slate-700 transition-colors hover:border-cyan-500 hover:text-cyan-700",
 
   // Card styling
-  cardBorder: "rounded-xl border border-[#D7DCE5]",
-  cardBg: "bg-white",
+  cardBorder: "rounded-xl border border-slate-200",
+  cardBg: "bg-white/90",
   cardPadding: "p-4",
 
   // Badge styling
-  badge: "rounded-full border border-[#D7DCE5] bg-white px-2.5 py-1 text-xs font-medium text-[#BF3A2B]",
+  badge: "rounded-md border border-cyan-500/25 bg-cyan-500/10 px-2.5 py-1 font-mono text-xs font-medium text-cyan-700",
 };
 

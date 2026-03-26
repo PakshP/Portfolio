@@ -1,78 +1,51 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useLayoutEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 import type { Project } from "@/lib/projects";
-import ProjectCard from "@/components/projects/ProjectCard";
+import ProjectGridCard from "@/components/projects/ProjectGridCard";
 
 type ProjectsShowcaseProps = {
   projects: Project[];
 };
 
 export default function ProjectsShowcase({ projects }: ProjectsShowcaseProps) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
-
-  const [scrollDistance, setScrollDistance] = useState(0);
-  const [sectionHeight, setSectionHeight] = useState(0);
-
-  useLayoutEffect(() => {
-    const measure = () => {
-      if (!trackRef.current || !sectionRef.current) {
-        return;
-      }
-
-      const sectionWidth = sectionRef.current.clientWidth;
-      const viewportHeight = window.innerHeight;
-      const trackWidth = trackRef.current.scrollWidth;
-      const horizontalDistance = Math.max(trackWidth - sectionWidth, 0);
-
-      setScrollDistance(horizontalDistance);
-      setSectionHeight(Math.max(viewportHeight * 1.35, viewportHeight + horizontalDistance));
-    };
-
-    measure();
-
-    const observer = new ResizeObserver(measure);
-    if (trackRef.current) {
-      observer.observe(trackRef.current);
-    }
-
-    window.addEventListener("resize", measure);
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("resize", measure);
-    };
-  }, [projects.length]);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], [0, -scrollDistance]);
 
   return (
     <>
-      <div className="space-y-4 md:hidden">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+      <div className="grid grid-cols-1 gap-5 md:hidden">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.3, delay: index * 0.04 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <ProjectGridCard project={project} />
+          </motion.div>
         ))}
       </div>
 
-      <div ref={sectionRef} className="relative hidden md:block" style={{ height: sectionHeight || "220vh" }}>
-        <div className="sticky top-28 overflow-hidden py-6">
-          <motion.div
-            ref={trackRef}
-            className="flex gap-8"
-            style={{ x: prefersReducedMotion ? 0 : x }}
-          >
-            {projects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </motion.div>
+      <div className="relative hidden md:block">
+        <div className="space-y-[16vh] pb-[16vh]">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              className="sticky top-24 h-[calc(100vh-7rem)] px-2"
+              style={{ zIndex: index + 1 }}
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
+              whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.35, delay: index * 0.05 }}
+            >
+              <ProjectGridCard
+                project={project}
+                className="mx-auto h-full w-full max-w-5xl"
+              />
+            </motion.div>
+          ))}
         </div>
       </div>
     </>

@@ -4,6 +4,9 @@ export type Project = {
   year: string;
   category: string;
   tags: string[];
+  image: string;
+  sourceCodeUrl: string;
+  isInProgress?: boolean;
 };
 
 export const projects: Project[] = [
@@ -14,6 +17,9 @@ export const projects: Project[] = [
     year: "2026",
     category: "Web Engineering",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/projects/portfolio-platform.svg",
+    sourceCodeUrl: "https://github.com/pakshpatel/portfolio-platform",
+    isInProgress: true,
   },
   {
     title: "Task Workflow App",
@@ -22,6 +28,8 @@ export const projects: Project[] = [
     year: "2025",
     category: "Productivity",
     tags: ["React", "Node.js", "PostgreSQL"],
+    image: "/projects/task-workflow.svg",
+    sourceCodeUrl: "https://github.com/pakshpatel/task-workflow-app",
   },
   {
     title: "Analytics Dashboard",
@@ -30,6 +38,8 @@ export const projects: Project[] = [
     year: "2025",
     category: "Data Systems",
     tags: ["React", "Recharts", "REST API"],
+    image: "/projects/analytics-dashboard.svg",
+    sourceCodeUrl: "https://github.com/pakshpatel/analytics-dashboard",
   },
   {
     title: "Developer Toolkit",
@@ -38,6 +48,8 @@ export const projects: Project[] = [
     year: "2024",
     category: "Developer Tools",
     tags: ["TypeScript", "CLI", "Automation"],
+    image: "/projects/developer-toolkit.svg",
+    sourceCodeUrl: "https://github.com/pakshpatel/developer-toolkit",
   },
 ];
 

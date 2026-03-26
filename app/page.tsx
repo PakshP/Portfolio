@@ -5,13 +5,15 @@ import ContactSection from "@/components/sections/ContactSection";
 import CourseworkEducationSection from "@/components/sections/CourseworkEducationSection";
 import HeroSection from "@/components/sections/HeroSection";
 import JourneySection from "@/components/sections/JourneySection";
+import SkillsSection from "@/components/sections/SkillsSection";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <NavBar />
-      <main className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+      <main className="w-full">
         <HeroSection />
+        <SkillsSection />
         <ProjectsSection />
         <CourseworkEducationSection />
         <JourneySection />

@@ -1,20 +1,15 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { LuExternalLink, LuGithub, LuX } from "react-icons/lu";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
-import { SectionHeader, FadeInUp } from "@/components/ui/AnimatedComponents";
+import { SectionHeader, SectionReveal } from "@/components/ui/AnimatedComponents";
 import type { Course } from "@/lib/coursework";
 import { courses } from "@/lib/coursework";
-import { classNames } from "@/lib/theme";
 
-function CourseModal({
-  course,
-  onClose,
-}: {
-  course: Course;
-  onClose: () => void;
-}) {
+function CourseOverlay({ course, onClose }: { course: Course; onClose: () => void }) {
   const shouldReduceMotion = useReducedMotion();
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -24,27 +19,25 @@ function CourseModal({
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#2A3B55]/45 p-4"
+      className="fixed inset-0 z-[60] bg-slate-100/85 p-4 backdrop-blur-sm"
       onClick={onClose}
-      aria-hidden
       initial={shouldReduceMotion ? false : { opacity: 0 }}
       animate={shouldReduceMotion ? {} : { opacity: 1 }}
       exit={shouldReduceMotion ? {} : { opacity: 0 }}
+      aria-hidden
     >
       <motion.div
+        layoutId={`course-node-${course.term}-${course.name}`}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="course-modal-title"
-        className="w-full max-w-2xl rounded-2xl border border-[#D7DCE5] bg-white p-5 shadow-xl sm:p-7"
+        aria-labelledby="course-overlay-title"
         onClick={(event) => event.stopPropagation()}
-        initial={shouldReduceMotion ? false : { opacity: 0, y: 16, scale: 0.98 }}
-        animate={shouldReduceMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
-        exit={shouldReduceMotion ? {} : { opacity: 0, y: 8, scale: 0.98 }}
+        className="mx-auto flex h-full w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_30px_80px_rgba(15,23,42,0.18)]"
       >
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex items-start justify-between border-b border-slate-200 px-6 py-5 sm:px-8">
           <div>
-            <p className="text-xs uppercase tracking-[0.16em] text-[#BF3A2B]">{course.term}</p>
-            <h3 id="course-modal-title" className="mt-2 font-serif text-2xl text-[#2A3B55]">
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-cyan-700">{course.term}</p>
+            <h3 id="course-overlay-title" className="mt-2 font-heading text-3xl font-bold text-slate-900">
               {course.name}
             </h3>
           </div>
@@ -52,26 +45,45 @@ function CourseModal({
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="rounded-full border border-[#D7DCE5] px-3 py-1 text-sm text-[#2A3B55] hover:border-[#BF3A2B] hover:text-[#BF3A2B]"
+            className="inline-flex items-center gap-2 rounded-md border border-slate-300 px-3 py-1.5 font-mono text-xs uppercase tracking-wide text-slate-700 hover:border-cyan-500 hover:text-cyan-700"
           >
+            <LuX />
             Close
           </button>
         </div>
 
-        <p className="mt-4 text-sm leading-7 text-[#4E5F7A]">{course.description}</p>
+        <div className="overflow-y-auto px-6 pb-7 pt-6 sm:px-8">
+          <p className="max-w-4xl text-sm leading-7 text-slate-700">{course.description}</p>
 
-        <div className="mt-6 space-y-3">
-          {course.projects.map((item) => (
-            <article key={item.title} className="rounded-xl border border-[#D7DCE5] bg-[#F9FAFC] p-4">
-              <div className="flex items-center justify-between gap-3">
-                <h4 className="text-base font-semibold text-[#2A3B55]">{item.title}</h4>
-                <span className="rounded-full border border-[#D7DCE5] bg-white px-2.5 py-1 text-xs font-medium text-[#BF3A2B]">
-                  {item.type}
-                </span>
-              </div>
-              <p className="mt-2 text-sm leading-6 text-[#4E5F7A]">{item.summary}</p>
-            </article>
-          ))}
+          <div className="mt-6 space-y-4">
+            {course.projects.map((item) => (
+              <motion.article
+                key={item.title}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+                animate={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.35 }}
+                className="rounded-xl border border-slate-200 bg-slate-50 p-4"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <h4 className="font-heading text-xl font-semibold text-slate-900">{item.title}</h4>
+                  <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 font-mono text-xs uppercase tracking-wide text-emerald-700">
+                    {item.type}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{item.summary}</p>
+                <a
+                  href={item.repositoryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-cyan-700 hover:text-cyan-600"
+                >
+                  <LuGithub />
+                  View Repository
+                  <LuExternalLink />
+                </a>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </motion.div>
     </motion.div>
@@ -81,6 +93,7 @@ function CourseModal({
 export default function CourseworkEducationSection() {
   const [activeCourse, setActiveCourse] = useState<Course | null>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
+  const portalRoot = typeof window === "undefined" ? null : document.body;
 
   useEffect(() => {
     if (!activeCourse) {
@@ -117,49 +130,56 @@ export default function CourseworkEducationSection() {
   };
 
   return (
-    <section id="coursework" className="border-b border-[#D7DCE5] py-16 sm:py-20">
-      <SectionHeader
-        label="Coursework and Education"
-        title="Academic Timeline"
-        description="Coursework milestones with applied labs and projects completed through the program."
-      />
+    <section id="coursework" className="border-b border-slate-200 py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionReveal>
+        <SectionHeader
+          label="Coursework and Education"
+          title="Interactive coursework timeline"
+          description="Each node opens a full-screen view with coursework details and direct repository links."
+        />
 
-      <FadeInUp delay={0.3} className="relative mt-10 pl-7 sm:pl-10">
-        <span className="absolute left-2 top-0 h-full w-px bg-[#D4AF37]/70 sm:left-3" aria-hidden />
-        <div className="space-y-10">
-          {courses.map((course) => (
-            <motion.article
-              key={`${course.term}-${course.name}`}
-              className="relative"
-              initial={{ opacity: 0, x: -8 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4 }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              <span
-                className="absolute -left-5 top-2 h-2.5 w-2.5 rounded-full bg-[#D4AF37] sm:-left-6"
-                aria-hidden
-              />
-              <p className="text-xs uppercase tracking-[0.15em] text-[#6D7B90]">{course.term}</p>
-              <h3 className="mt-2 text-xl font-semibold text-[#2A3B55]">{course.name}</h3>
-              <p className="mt-3 max-w-3xl text-sm leading-7 text-[#4E5F7A]">{course.description}</p>
+        <div className="relative mt-10 pl-7 sm:pl-10">
+          <span className="absolute left-2 top-0 h-full w-px bg-cyan-500/30 sm:left-3" aria-hidden />
+          <div className="space-y-8">
+            {courses.map((course, index) => (
               <motion.button
+                key={`${course.term}-${course.name}`}
                 type="button"
                 onClick={() => openModal(course)}
-                className={classNames.buttonSmall}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="relative block w-full text-left"
+                initial={{ opacity: 0, x: -14, y: 16 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 0.45, delay: index * 0.06 }}
+                viewport={{ once: true, amount: 0.2 }}
               >
-                View Projects
+                <span className="absolute -left-5 top-4 h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(34,197,94,0.2)] sm:-left-6" aria-hidden />
+                <motion.article
+                  layoutId={`course-node-${course.term}-${course.name}`}
+                  className="rounded-xl border border-slate-200 bg-white/90 p-4 shadow-sm transition-colors hover:border-cyan-400/50"
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <p className="font-mono text-xs uppercase tracking-[0.15em] text-cyan-700">{course.term}</p>
+                    <span className="rounded-md border border-slate-300 bg-slate-100 px-2 py-1 font-mono text-[11px] uppercase tracking-wide text-slate-600">
+                      click to open
+                    </span>
+                  </div>
+                  <h3 className="mt-2 font-heading text-2xl font-bold text-slate-900">{course.name}</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{course.description}</p>
+                </motion.article>
               </motion.button>
-            </motion.article>
-          ))}
+            ))}
+          </div>
         </div>
-      </FadeInUp>
+      </SectionReveal>
 
-      <AnimatePresence>
-        {activeCourse ? <CourseModal course={activeCourse} onClose={closeModal} /> : null}
-      </AnimatePresence>
+      {portalRoot
+        ? createPortal(
+            <AnimatePresence>{activeCourse ? <CourseOverlay course={activeCourse} onClose={closeModal} /> : null}</AnimatePresence>,
+            portalRoot,
+          )
+        : null}
+      </div>
     </section>
   );
 }

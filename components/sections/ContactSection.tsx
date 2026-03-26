@@ -1,35 +1,61 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { FadeInUp, SectionHeader } from "@/components/ui/AnimatedComponents";
+import { LuDownload, LuLinkedin, LuMail } from "react-icons/lu";
+import { FadeInUp, SectionHeader, SectionReveal } from "@/components/ui/AnimatedComponents";
 import { classNames } from "@/lib/theme";
 
 export default function ContactSection() {
   return (
     <section id="contact" className={`border-t ${classNames.sectionBorder} ${classNames.sectionPy}`}>
-      <SectionHeader
-        label="Contact"
-        title="Let us connect"
-        description="Open to internships, freelance collaborations, and software opportunities."
-      />
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionReveal>
+        <SectionHeader
+          label="Contact"
+          title="Let's Connect"
+          description="Reach out for software roles, collaborations, or to view my resume."
+        />
 
-      <FadeInUp delay={0.3} className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          { label: "Email", value: "paksh@example.com" },
-          { label: "LinkedIn", value: "linkedin.com/in/pakshpatel" },
-          { label: "Location", value: "United States" },
-        ].map((item, idx) => (
-          <motion.div
-            key={item.label}
-            className={`rounded-xl border border-[#D7DCE5] bg-white p-4 ${idx === 2 ? "sm:col-span-2 lg:col-span-1" : ""}`}
+        <FadeInUp delay={0.3} className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <motion.a
+            href="/Paksh Patel.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-3 font-mono text-xs uppercase tracking-wide text-slate-700 transition-colors hover:border-cyan-500/50 hover:text-cyan-700"
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: idx * 0.1 }}
-            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4, delay: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <p className="text-xs uppercase tracking-[0.15em] text-[#BF3A2B]">{item.label}</p>
-            <p className="mt-2 text-sm text-[#2A3B55]">{item.value}</p>
-          </motion.div>
-        ))}
-      </FadeInUp>
+            <LuDownload /> Download Resume
+          </motion.a>
+
+          <motion.a
+            href="mailto:pakshpatel1@gmail.com"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-3 font-mono text-xs uppercase tracking-wide text-slate-700 transition-colors hover:border-cyan-500/50 hover:text-cyan-700"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.08 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <LuMail /> Email
+          </motion.a>
+
+          <motion.a
+            href="https://www.linkedin.com/in/paksh-patel/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-3 font-mono text-xs uppercase tracking-wide text-slate-700 transition-colors hover:border-cyan-500/50 hover:text-cyan-700"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.16 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <LuLinkedin /> LinkedIn
+          </motion.a>
+        </FadeInUp>
+      </SectionReveal>
+      </div>
     </section>
   );
 }

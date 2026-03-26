@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const sans = Inter({
@@ -7,8 +7,13 @@ const sans = Inter({
   subsets: ["latin"],
 });
 
-const serif = Playfair_Display({
-  variable: "--font-serif",
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+});
+
+const heading = Playfair_Display({
+  variable: "--font-heading",
   subsets: ["latin"],
 });
 
@@ -25,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sans.variable} ${serif.variable} antialiased`}
+        className={`${sans.variable} ${mono.variable} ${heading.variable} antialiased`}
       >
         {children}
       </body>

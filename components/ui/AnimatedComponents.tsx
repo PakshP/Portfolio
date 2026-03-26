@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
+import { classNames } from "@/lib/theme";
 
 
 /**
@@ -22,8 +23,8 @@ export function SectionHeader({
         initial={{ opacity: 0, y: 8 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        viewport={{ once: true, margin: "-50px" }}
-        className="text-xs uppercase tracking-[0.22em] text-[#BF3A2B]"
+        viewport={{ once: true, amount: 0.2 }}
+        className={classNames.sectionLabel}
       >
         {label}
       </motion.p>
@@ -31,8 +32,8 @@ export function SectionHeader({
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        viewport={{ once: true, margin: "-50px" }}
-        className="mt-3 font-serif text-3xl text-[#2A3B55] sm:text-5xl"
+        viewport={{ once: true, amount: 0.2 }}
+        className={classNames.sectionTitle}
       >
         {title}
       </motion.h2>
@@ -40,8 +41,8 @@ export function SectionHeader({
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true, margin: "-50px" }}
-        className="mt-3 max-w-2xl text-sm leading-7 text-[#4E5F7A] sm:text-base"
+        viewport={{ once: true, amount: 0.2 }}
+        className={classNames.sectionDescription}
       >
         {description}
       </motion.p>
@@ -54,18 +55,40 @@ export function SectionHeader({
  */
 const FadeInUpComponent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<typeof motion.div> & { delay?: number }
+  React.ComponentPropsWithoutRef<typeof motion.div> & { delay?: number }
 >(({ delay = 0, ...props }, ref) => (
   <motion.div
     ref={ref}
     initial={{ opacity: 0, y: 16 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay }}
-    viewport={{ once: true, margin: "-50px" }}
+    viewport={{ once: true, amount: 0.2 }}
     {...props}
   />
 ));
 FadeInUpComponent.displayName = "FadeInUp";
 
 export const FadeInUp = FadeInUpComponent;
+
+export function SectionReveal({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  return (
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, delay }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
