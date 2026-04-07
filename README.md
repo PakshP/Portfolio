@@ -1,13 +1,34 @@
-# Responsive Personal Portfolio Website
+# Portfolio
 
-A clean, interactive, and fully responsive personal portfolio website built with React and Tailwind CSS. This site supports **Dark Mode** and **Light Mode** with animations and a modern design, optimized for showcasing projects, skills, and contact details.
+Dark, high-contrast portfolio built with Next.js, Tailwind CSS, and Framer Motion.
 
-## Features
-- **Dark & Light Themes**: Easily toggle between themes with smooth transitions.
-- **Responsive Design**: Optimized for mobile, tablet, and desktop devices.
-- **Interactive Animations**: Scroll-triggered effects and hover transitions for an engaging user experience.
-- **Project Showcase**: Filterable gallery for projects with descriptions and live links.
-- **Contact Form**: Simple form with social media links to connect with you.
-- **Deployment**: Deployed on Vercel for easy access and sharing.
+## Sections
 
-# [VISIT HERE](https://www.pakshpatel.me/)
+- Hero intro with serif headline and accent CTAs
+- Curated writing and research feed
+- Sticky horizontal projects showcase
+- Vertical timeline for journey and experience
+- Accordion references for expertise categories
+
+## Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+Then open `http://localhost:3000`.
+
+## Project Structure
+
+- `app/page.tsx`: top-level page composition
+- `components/sections/*`: hero, writing, journey, references sections
+- `components/projects/*`: modular project showcase and cards
+- `lib/*.ts`: typed content data for each section
