@@ -6,30 +6,61 @@ export type TimelineEvent = {
   highlight?: string;
 };
 
-export const timelineEvents: TimelineEvent[] = [
+export type TimelineEntry = {
+  year: string;
+  education?: TimelineEvent;
+  experience?: TimelineEvent;
+};
+
+export const timeline: TimelineEntry[] = [
   {
-    period: "2025 - Present",
-    title: "Software Developer",
-    organization: "Independent Projects",
-    description:
-      "Builds full-stack products focused on performance, maintainability, and practical user workflows.",
-    highlight: "Node.js",
+    year: "2026",
+    education: {
+      period: "May 2026",
+      title: "B.S. Computer Science",
+      organization: "University of South Carolina",
+      description:
+        "Completing undergraduate degree with coursework in machine learning, networks, and distributed systems.",
+      highlight: "Graduating",
+    },
   },
   {
-    period: "2024 - 2025",
-    title: "Resident Assistant",
-    organization: "Student Housing",
-    description:
-      "Led peer support initiatives, coordinated events, and managed communications across diverse student groups.",
-    highlight: "Resident Assistant",
+    year: "2025",
+    education: {
+      period: "Fall 2025",
+      title: "Game Development · CSCE 552",
+      organization: "University of South Carolina",
+      description:
+        "Collaborated in a team to design and build 2D and 3D games, focusing on gameplay systems and cross-discipline integration.",
+    },
   },
   {
-    period: "2022 - 2026",
-    title: "B.S. in Computer Science",
-    organization: "University Program",
-    description:
-      "Studied algorithms, distributed systems, and software architecture with a focus on project-based implementation.",
-    highlight: "Python",
+    year: "2024",
+    education: {
+      period: "Spring 2024",
+      title: "Software Engineering · CSCE 247",
+      organization: "University of South Carolina",
+      description:
+        "Applied planning, testing, architecture, and team delivery workflows in collaborative projects.",
+    },
+    experience: {
+      period: "2024 — 2024",
+      title: "Information Technology Intern",
+      organization: "Short Trip LLC",
+      description:
+        "Collaborated with a team to build backend management apps in Google AppSheet that streamlined business workflows, and helped migrate the data layer to SQL by designing scalable schemas from initial dbdiagram models.",
+      highlight: "Process Optimization",
+    },
+  },
+  {
+    year: "2022",
+    education: {
+      period: "Aug 2022",
+      title: "B.S. in Computer Science",
+      organization: "University of South Carolina",
+      description:
+        "Began undergraduate studies in Computer Science with a focus on algorithms, systems, and software architecture.",
+      highlight: "Started",
+    },
   },
 ];
-

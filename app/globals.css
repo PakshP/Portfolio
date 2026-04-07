@@ -1,34 +1,34 @@
 @import "tailwindcss";
-/*  ---break--- */
 @plugin "tailwindcss-animate";
 @import "tw-animate-css";
-/*  ---break--- */
 @custom-variant dark (&:is(.dark *));
 
 html {
   scroll-behavior: smooth;
 }
 
+/* ─── Light Mode (default) ─── */
 :root {
-  --accent: #22C55E;
-  --muted: #E2E8F0;
+  --accent: #6366F1;
+  --accent-secondary: #8B5CF6;
+  --muted: #F1F5F9;
   --radius: 0.625rem;
-  --background: #F8FAFC;
+  --background: #FFFFFF;
   --foreground: #0F172A;
   --card: #FFFFFF;
   --card-foreground: #0F172A;
   --popover: #FFFFFF;
   --popover-foreground: #0F172A;
-  --primary: #22C55E;
+  --primary: #6366F1;
   --primary-foreground: #FFFFFF;
-  --secondary: #E2E8F0;
+  --secondary: #F1F5F9;
   --secondary-foreground: #0F172A;
   --muted-foreground: #64748B;
-  --accent-foreground: #064E3B;
+  --accent-foreground: #4338CA;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #D6E0EA;
-  --input: #D6E0EA;
-  --ring: #38BDF8;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #6366F1;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -42,6 +42,42 @@ html {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* ─── Dark Mode ─── */
+.dark {
+  --accent: #818CF8;
+  --accent-secondary: #A78BFA;
+  --background: #09090B;
+  --foreground: #F1F5F9;
+  --card: rgba(15, 15, 20, 0.6);
+  --card-foreground: #F1F5F9;
+  --popover: #0F0F14;
+  --popover-foreground: #F1F5F9;
+  --primary: #818CF8;
+  --primary-foreground: #09090B;
+  --secondary: #1A1A2E;
+  --secondary-foreground: #F1F5F9;
+  --muted: #1A1A2E;
+  --muted-foreground: #94A3B8;
+  --accent-foreground: #C4B5FD;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(148, 163, 184, 0.1);
+  --input: rgba(148, 163, 184, 0.1);
+  --ring: #818CF8;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @theme inline {
@@ -85,44 +121,6 @@ html {
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-/*  ---break--- */
-
-.dark {
-  --background: #0B1220;
-  --foreground: #E2E8F0;
-  --card: #111C33;
-  --card-foreground: #E2E8F0;
-  --popover: #111C33;
-  --popover-foreground: #E2E8F0;
-  --primary: #22C55E;
-  --primary-foreground: #03140A;
-  --secondary: #1E293B;
-  --secondary-foreground: #E2E8F0;
-  --muted: #1E293B;
-  --muted-foreground: #94A3B8;
-  --accent: #22C55E;
-  --accent-foreground: #022C22;
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: #334155;
-  --input: #334155;
-  --ring: #38BDF8;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
-/*  ---break--- */
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -132,12 +130,27 @@ html {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
     font-size: 1.03rem;
     line-height: 1.6;
-    background-image: linear-gradient(180deg, #f8fafc 0%, #f3f8fd 100%);
   }
 
-  h1,
-  h2,
-  h3 {
+  /* Light mode body background */
+  body {
+    background-color: #FFFFFF;
+    background-image:
+      radial-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Dark mode body background */
+  .dark body {
+    background-color: #09090B;
+    background-image:
+      radial-gradient(rgba(129, 140, 248, 0.03) 1px, transparent 1px),
+      radial-gradient(rgba(139, 92, 246, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px, 80px 80px;
+    background-position: 0 0, 20px 20px;
+  }
+
+  h1, h2, h3 {
     font-family: var(--font-heading), ui-serif, Georgia, serif;
   }
 
@@ -150,5 +163,87 @@ html {
   }
 }
 
-/* Project section styles are now implemented directly in component classes for a simple grid layout. */
+/* ─── Gradient text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 40%, #D946EF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
+.gradient-text-light {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 40%, #C026D3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glass morphism ─── */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.dark .glass {
+  background: rgba(15, 15, 20, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.dark .glass-card {
+  background: rgba(15, 15, 20, 0.4);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  box-shadow: none;
+}
+.dark .glass-card:hover {
+  border-color: rgba(129, 140, 248, 0.25);
+  box-shadow: 0 0 30px rgba(129, 140, 248, 0.06), 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Glow effects ─── */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15), 0 0 60px rgba(99, 102, 241, 0.05);
+}
+.dark .glow-primary {
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.15), 0 0 60px rgba(129, 140, 248, 0.05);
+}
+
+/* ─── Animated gradient ─── */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* ─── Pulse glow for timeline nodes ─── */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2), 0 0 12px rgba(99, 102, 241, 0.1); }
+  50% { box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.15), 0 0 20px rgba(99, 102, 241, 0.2); }
+}
+.pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* ─── Section divider gradient ─── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.2) 30%, rgba(139, 92, 246, 0.2) 70%, transparent 100%);
+}
+.dark .section-divider {
+  background: linear-gradient(90deg, transparent 0%, rgba(129, 140, 248, 0.3) 30%, rgba(167, 139, 250, 0.3) 70%, transparent 100%);
+}

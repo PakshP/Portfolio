@@ -14,84 +14,83 @@ export type Course = {
 
 export const courses: Course[] = [
   {
-    name: "Data Structures and Algorithms",
-    term: "Fall 2024",
-    description:
-      "Implemented core data structures and evaluated algorithmic tradeoffs through performance-focused problem solving.",
-    projects: [
-      {
-        title: "Custom Priority Queue Benchmark",
-        type: "Lab",
-        summary: "Compared heap variants and profiled insertion and extraction under varied loads.",
-        repositoryUrl: "https://github.com/pakshpatel/priority-queue-benchmark",
-      },
-      {
-        title: "Graph Pathfinding Visualizer",
-        type: "Project",
-        summary: "Built Dijkstra and A* visual demos with step-by-step state rendering.",
-        repositoryUrl: "https://github.com/pakshpatel/graph-pathfinding-visualizer",
-      },
-    ],
-  },
-  {
-    name: "Operating Systems",
-    term: "Spring 2025",
-    description:
-      "Explored process scheduling, memory management, and synchronization through systems-level programming.",
-    projects: [
-      {
-        title: "Thread Scheduler Simulator",
-        type: "Lab",
-        summary: "Simulated FCFS, SJF, and round-robin scheduling with latency metrics.",
-        repositoryUrl: "https://github.com/pakshpatel/thread-scheduler-simulator",
-      },
-      {
-        title: "Mini Shell with Job Control",
-        type: "Project",
-        summary: "Implemented command parsing, foreground/background jobs, and signal handling.",
-        repositoryUrl: "https://github.com/pakshpatel/mini-shell-job-control",
-      },
-    ],
-  },
-  {
-    name: "Database Systems",
-    term: "Fall 2025",
-    description:
-      "Designed relational schemas and optimized queries for consistency, scale, and maintainability.",
-    projects: [
-      {
-        title: "Campus Event Data Model",
-        type: "Project",
-        summary: "Created normalized schemas, migration scripts, and reporting views.",
-        repositoryUrl: "https://github.com/pakshpatel/campus-event-data-model",
-      },
-      {
-        title: "Indexing and Query Analysis",
-        type: "Lab",
-        summary: "Tested execution plans and compared index strategies on large datasets.",
-        repositoryUrl: "https://github.com/pakshpatel/indexing-query-analysis",
-      },
-    ],
-  },
-  {
-    name: "Software Engineering",
+    name: "Applied Machine Learning · CSCE 583",
     term: "Spring 2026",
     description:
-      "Applied team-based delivery practices including planning, testing, CI, and architecture reviews.",
+      "Applied machine learning methods for model training, evaluation, and practical problem solving.",
+    projects: [],
+  },
+  {
+    name: "Computer Game Development · CSCE 552",
+    term: "Fall 2025",
+    description:
+      "Collaborated in a team to design and build 2D and 3D games, focusing on gameplay systems, iteration, and cross-discipline integration.",
     projects: [
       {
-        title: "Team Sprint Management Tool",
+        title: "Midnight on Main",
         type: "Project",
-        summary: "Developed backlog, sprint, and velocity tracking features with API integration.",
-        repositoryUrl: "https://github.com/pakshpatel/team-sprint-management-tool",
+        summary:
+          "Built with a team: a first-person stealth puzzle game in Godot with objective progression, enemy avoidance, and checkpoint-style save flow.",
+        repositoryUrl: "https://github.com/R0bb1eV/Midnight-On-Main",
       },
       {
-        title: "Test Automation Pipeline",
-        type: "Lab",
-        summary: "Integrated lint, unit tests, and coverage gates in a CI workflow.",
-        repositoryUrl: "https://github.com/pakshpatel/test-automation-pipeline",
+        title: "Your 2D Game Title",
+        type: "Project",
+        summary:
+          "Built with a team: a fast-paced 2D endless runner where players dodge dynamic city hazards, collect cassettes, and survive increasingly difficult runs as game speed scales over time.",
+        repositoryUrl: "https://github.com/PakshP/Virucity/",
       },
     ],
+  },
+  {
+    name: "Software Engineering · CSCE 247",
+    term: "Spring 2024",
+    description:
+      "Applied software engineering practices including planning, testing, architecture, and team delivery workflows.",
+    projects: [
+      {
+        title: "DegreeAudit Frontend",
+        type: "Project",
+        summary:
+          "Collaborated with a team to build the client-side experience for a degree progress and audit system, including requirement tracking views and user-focused workflows.",
+        repositoryUrl: "https://github.com/AlexRishmawi/degreeauditGUI",
+      },
+      {
+        title: "DegreeAudit Backend",
+        type: "Project",
+        summary:
+          "Collaborated with a team to develop the backend services for a degree audit platform, handling requirement evaluation logic, data persistence, and API endpoints.",
+        repositoryUrl: "https://github.com/AlexRishmawi/DegreeAudit",
+      },
+    ],
+  },
+  {
+    name: "Data Structures and Algorithms · CSCE 350",
+    term: "Fall 2024",
+    description:
+      "Implemented core data structures and analyzed algorithmic tradeoffs through performance-focused problem solving.",
+    projects: [],
+  },
+  {
+    name: "Computer Networks · CSCE 416",
+    term: "Fall 2024",
+    description:
+      "Studied network protocols, layered architecture, and data transport behavior in distributed systems.",
+    projects: [],
+  },
+  {
+    name: "Advanced Programming Techniques · CSCE 240",
+    term: "Spring 2024",
+    description:
+      "Built larger software systems with emphasis on code organization, reuse, and maintainability.",
+    projects: [],
+  },
+  {
+    name: "Unix/Linux Fundamentals · CSCE 215",
+    term: "Spring 2023",
+    description:
+      "Worked with shell environments, scripting, tooling, and practical command-line workflows.",
+    projects: [],
   },
 ];
 

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import React from "react";
 import { classNames } from "@/lib/theme";
 
-
 /**
  * Reusable section header component with label, title, and description
  */
@@ -59,9 +58,9 @@ const FadeInUpComponent = React.forwardRef<
 >(({ delay = 0, ...props }, ref) => (
   <motion.div
     ref={ref}
-    initial={{ opacity: 0, y: 16 }}
+    initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay }}
+    transition={{ duration: 0.6, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
     viewport={{ once: true, amount: 0.2 }}
     {...props}
   />
@@ -82,13 +81,12 @@ export function SectionReveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 22 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.55, delay }}
-      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.65, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
+      viewport={{ once: true, amount: 0.15 }}
     >
       {children}
     </motion.div>
   );
 }
-
