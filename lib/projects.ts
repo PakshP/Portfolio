@@ -132,7 +132,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     image: "/projects/portfolio.png",
     sourceCodeUrl: "https://github.com/PakshP/Portfolio",
-    isInProgress: true,
+    isInProgress: false,
   },
   {
     title: "F1 Telem",
