@@ -34,7 +34,7 @@ export const courses: Course[] = [
         repositoryUrl: "https://github.com/R0bb1eV/Midnight-On-Main",
       },
       {
-        title: "Your 2D Game Title",
+        title: "Virucity",
         type: "Project",
         summary:
           "Built with a team: a fast-paced 2D endless runner where players dodge dynamic city hazards, collect cassettes, and survive increasingly difficult runs as game speed scales over time.",
