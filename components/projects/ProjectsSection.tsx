@@ -11,7 +11,7 @@ export default function ProjectsSection() {
       <div className="relative mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
         <SectionHeader
           label="Projects"
-          title="Selected projects"
+          title="Projects I've Worked On"
           description="Scroll through full-screen project cards — each one with details, tech stack, and source links."
         />
       </div>
