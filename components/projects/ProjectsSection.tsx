@@ -12,7 +12,7 @@ export default function ProjectsSection() {
         <SectionHeader
           label="Projects"
           title="Projects I've Worked On"
-          description="Scroll through full-screen project cards — each one with details, tech stack, and source links."
+          description="Scroll through the projects I have worked on, each one includes details, tech stack, and source links."
         />
       </div>
 
