@@ -143,6 +143,7 @@ export const projects: Project[] = [
     tags: ["C#", "WPF", "UDP Telemetry", ".NET 8", "JSON"],
     image: "/projects/f1telem.png",
     sourceCodeUrl: "https://github.com/PakshP/F1Telem",
+    isInProgress: true,
   },
   {
     title: "Midnight on Main",
