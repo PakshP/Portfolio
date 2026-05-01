@@ -8,7 +8,7 @@ export type TimelineEvent = {
 
 export type TimelineEntry = {
   year: string;
-  education?: TimelineEvent;
+  education?: TimelineEvent | TimelineEvent[];
   experience?: TimelineEvent;
 };
 
@@ -26,13 +26,23 @@ export const timeline: TimelineEntry[] = [
   },
   {
     year: "2025",
-    education: {
-      period: "Fall 2025",
-      title: "Game Development · CSCE 552",
-      organization: "University of South Carolina",
-      description:
-        "Collaborated in a team to design and build 2D and 3D games, focusing on gameplay systems and cross-discipline integration.",
-    },
+    education: [
+      {
+        period: "Fall 2025 — Spring 2026",
+        title: "Capstone Project · CSCE 490 / 492",
+        organization: "University of South Carolina",
+        description:
+          "Two-semester team capstone — designed, built, and shipped Blender Collab, a web-based version control system for Blender with object-level versioning, S3-backed storage, and team collaboration.",
+        highlight: "Capstone",
+      },
+      {
+        period: "Fall 2025",
+        title: "Game Development · CSCE 552",
+        organization: "University of South Carolina",
+        description:
+          "Collaborated in a team to design and build 2D and 3D games, focusing on gameplay systems and cross-discipline integration.",
+      },
+    ],
   },
   {
     year: "2024",

@@ -102,13 +102,24 @@ export default function JourneySection() {
               <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-indigo-500/40 via-violet-500/20 to-transparent" />
 
               <div className="space-y-8">
-                {timeline.map((entry, index) => (
+                {timeline.map((entry, index) => {
+                  const educationEvents = Array.isArray(entry.education)
+                    ? entry.education
+                    : entry.education
+                      ? [entry.education]
+                      : [];
+                  return (
                   <div key={entry.year} className="relative grid grid-cols-[1fr_3rem_1fr] items-start gap-0">
                     {/* Left — Education */}
-                    <div className="pr-6">
-                      {entry.education && (
-                        <TimelineCard event={entry.education} side="left" delay={index * 0.1} />
-                      )}
+                    <div className="space-y-4 pr-6">
+                      {educationEvents.map((event, eduIndex) => (
+                        <TimelineCard
+                          key={event.title}
+                          event={event}
+                          side="left"
+                          delay={index * 0.1 + eduIndex * 0.05}
+                        />
+                      ))}
                     </div>
 
                     {/* Center node */}
@@ -131,7 +142,8 @@ export default function JourneySection() {
                       )}
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -140,7 +152,13 @@ export default function JourneySection() {
           <div className="relative mt-12 pl-7 md:hidden">
             <div className="absolute left-2 top-0 h-full w-px bg-gradient-to-b from-indigo-500/40 via-violet-500/20 to-transparent" />
             <div className="space-y-6">
-              {timeline.map((entry, index) => (
+              {timeline.map((entry, index) => {
+                const educationEvents = Array.isArray(entry.education)
+                  ? entry.education
+                  : entry.education
+                    ? [entry.education]
+                    : [];
+                return (
                 <div key={entry.year} className="relative">
                   {/* Year node */}
                   <motion.div
@@ -154,15 +172,21 @@ export default function JourneySection() {
                   </motion.div>
 
                   <div className="space-y-4 pl-4 pt-1">
-                    {entry.education && (
-                      <TimelineCard event={entry.education} side="left" delay={index * 0.08} />
-                    )}
+                    {educationEvents.map((event, eduIndex) => (
+                      <TimelineCard
+                        key={event.title}
+                        event={event}
+                        side="left"
+                        delay={index * 0.08 + eduIndex * 0.04}
+                      />
+                    ))}
                     {entry.experience && (
                       <TimelineCard event={entry.experience} side="right" delay={index * 0.08 + 0.05} />
                     )}
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </SectionReveal>

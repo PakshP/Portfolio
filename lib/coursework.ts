@@ -14,11 +14,41 @@ export type Course = {
 
 export const courses: Course[] = [
   {
+    name: "Capstone Computing Project II · CSCE 492",
+    term: "Spring 2026",
+    description:
+      "Continued development of the team capstone project — completing implementation, testing, deployment, and documentation through the final delivery phase.",
+    projects: [
+      {
+        title: "Blender Collab",
+        type: "Project",
+        summary:
+          "Built with a team: a web-based version control system for Blender that exports objects as JSON with mesh data in S3, enabling object-level versioning, deduplication, and team collaboration with role-based permissions and merge conflict detection.",
+        repositoryUrl: "https://github.com/SCCapstone/CapstoneBots",
+      },
+    ],
+  },
+  {
     name: "Applied Machine Learning · CSCE 583",
     term: "Spring 2026",
     description:
       "Applied machine learning methods for model training, evaluation, and practical problem solving.",
     projects: [],
+  },
+  {
+    name: "Capstone Computing Project I · CSCE 490",
+    term: "Fall 2025",
+    description:
+      "Team-based capstone planning and design — gathering requirements, defining architecture, and producing the initial implementation of a semester-long software project.",
+    projects: [
+      {
+        title: "Blender Collab",
+        type: "Project",
+        summary:
+          "Built with a team: a web-based version control system for Blender that exports objects as JSON with mesh data in S3, enabling object-level versioning, deduplication, and team collaboration with role-based permissions and merge conflict detection.",
+        repositoryUrl: "https://github.com/SCCapstone/CapstoneBots",
+      },
+    ],
   },
   {
     name: "Computer Game Development · CSCE 552",

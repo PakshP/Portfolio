@@ -124,14 +124,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Portfolio",
+    title: "Blender Collab",
     description:
-      "A high-performance personal website with fast page loads, refined typography, and a polished responsive design system.",
+      "A web-based version control system for Blender that exports individual objects as JSON with mesh data in S3, enabling object-level versioning, content deduplication, and team collaboration with role-based permissions and merge conflict detection.",
     year: "2026",
-    category: "Web Development",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "/projects/portfolio.png",
-    sourceCodeUrl: "https://github.com/PakshP/Portfolio",
+    category: "Capstone Project",
+    tags: ["FastAPI", "Next.js", "PostgreSQL", "S3 / MinIO", "Docker", "Blender Addon"],
+    image: "/projects/blendercollab.png",
+    sourceCodeUrl: "https://github.com/SCCapstone/CapstoneBots",
     isInProgress: false,
   },
   {
