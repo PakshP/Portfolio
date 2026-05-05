@@ -135,6 +135,16 @@ export const projects: Project[] = [
     isInProgress: false,
   },
   {
+    title: "Packing Manifest",
+    description:
+      "A collaborative packing list app for extended travel with an integrated local-first TSA compliance assistant, featuring multi-bag organization, fuzzy search across a 494-item TSA database, and a visual ridgeline progress chart.",
+    year: "2025",
+    category: "Full-Stack Web App",
+    tags: ["Next.js 15", "React 19", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS"],
+    image: "/projects/packingmanifest.png",
+    sourceCodeUrl: "https://github.com/PakshP/packing-manifest",
+  },
+  {
     title: "F1 Telem",
     description:
       "A desktop app that captures F1 25 UDP telemetry during Time Trial sessions and exports distance-normalized lap data as structured JSON for lap comparison and performance analysis.",
@@ -154,15 +164,5 @@ export const projects: Project[] = [
     tags: ["Godot", "Blender", "3D Game Development", "Stealth", "Puzzle Design"],
     image: "/projects/midnightonmain.png",
     sourceCodeUrl: "https://github.com/R0bb1eV/Midnight-On-Main",
-  },
-  {
-    title: "WorldTools Fork",
-    description:
-      "Maintained a Fabric-only fork of WorldTools for Minecraft 1.21.11, updating compatibility for modern APIs and preserving world snapshot export features (chunks, entities, players, stats, advancements, and metadata).",
-    year: "2026",
-    category: "Open Source Maintenance",
-    tags: ["Java 21", "Fabric", "Minecraft Modding", "Gradle", "Open Source"],
-    image: "/projects/worldtools.png",
-    sourceCodeUrl: "https://github.com/PakshP/WorldTools",
   },
 ];
