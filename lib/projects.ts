@@ -135,14 +135,14 @@ export const projects: Project[] = [
     isInProgress: false,
   },
   {
-    title: "Packing Manifest",
+    title: "InboxSwipe",
     description:
-      "A collaborative packing list app for extended travel with an integrated local-first TSA compliance assistant, featuring multi-bag organization, fuzzy search across a 494-item TSA database, and a visual ridgeline progress chart.",
-    year: "2025",
-    category: "Full-Stack Web App",
-    tags: ["Next.js 15", "React 19", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS"],
-    image: "/projects/packingmanifest.png",
-    sourceCodeUrl: "https://github.com/PakshP/packing-manifest",
+      "A self-hosted Gmail triage tool that turns inbox cleanup into a swipe deck — keep, delete, or unsubscribe. Syncs metadata-only into local SQLite and flushes decisions to Gmail as labels in batches, so every choice stays reversible and message bodies never leave Google.",
+    year: "2026",
+    category: "Self-Hosted Web App",
+    tags: ["Node.js", "Express 5", "SQLite", "Gmail API", "OAuth 2.0", "Docker"],
+    image: "/projects/inboxswipe.png",
+    sourceCodeUrl: "https://github.com/PakshP/InboxSwipe",
   },
   {
     title: "F1 Telem",

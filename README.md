@@ -13,7 +13,7 @@ A personal portfolio site for **Paksh Patel** — a dark, high-contrast showcase
 | Project | Description | Stack |
 | --- | --- | --- |
 | **Blender Collab** | Web-based version control for Blender with object-level versioning, content deduplication, and team collaboration. | FastAPI · Next.js · PostgreSQL · S3/MinIO · Docker |
-| **Packing Manifest** | Collaborative packing list app for extended travel with a local-first TSA compliance assistant and visual progress tracking. | Next.js 15 · React 19 · TypeScript · Supabase · PostgreSQL |
+| **InboxSwipe** | Self-hosted, metadata-only Gmail triage — swipe to keep, delete, or unsubscribe, flushed to Gmail as labels. | Node.js · Express 5 · SQLite · Gmail API · Docker |
 | **F1 Telem** | Desktop app capturing F1 25 UDP telemetry and exporting distance-normalized lap data for performance analysis. | C# · WPF · .NET 8 · UDP |
 | **Midnight on Main** | First-person stealth puzzle game where players evade the Homework Enforcer to escape a university building. | Godot · Blender · 3D Game Dev |
 
